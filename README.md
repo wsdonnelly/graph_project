@@ -1,0 +1,1 @@
+Inspired by my studies in the course "C++ for C programmers, University of California, Santa Cruz". I created a single summation project that includes both implementations of Dijkstra's shortest path algorithm and Kruskal’s minimum spanning tree algorithm utilizing a single graph class.
