@@ -1,5 +1,6 @@
 #include "graph.hpp"
 #include "kruskalMST.hpp"
+#include "dijkstra.hpp"
 
 /*
 ** graph can either read from a file (assumes no errors and should be exact format as example file)
@@ -17,9 +18,11 @@ int main() {
 
 	mygraph.print_matrix();
 	std::cout << "\n";
-	KruskalMST mst(mygraph);
-	mst.get_MST();
-	mst.get_cost();
-	mst.get_edge_set();
+	//KruskalMST mst(mygraph);
+	//mst.get_MST();
+	//mst.get_cost();
+	//mst.get_edge_set();
+	DijkstraSPT spt(mygraph, 0);
+	spt.print_SPT();
 	return (0);
 }

@@ -17,6 +17,7 @@ class Graph {
 		void add_edge(int i, int j, int w);
 		void create_new();
 		friend class KruskalMST;
+		friend class DijkstraSPT;
 	public:
 		//construct from file path
 		Graph(std::string file_path);

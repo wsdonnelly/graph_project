@@ -1,8 +1,8 @@
 NAME = graph_project
 CC = g++
 CFLAGS = --std=c++11 -Wall
-SRCS = sources/main.cpp sources/graph.cpp sources/kruskalMST.cpp
-OBJS = main.o graph.o kruskalMST.o
+SRCS = sources/main.cpp sources/graph.cpp sources/kruskalMST.cpp sources/dijkstra.cpp
+OBJS = main.o graph.o kruskalMST.o dijkstra.o
 INCLUDES = -I includes/
 
 all: $(NAME)
