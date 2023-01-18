@@ -11,7 +11,7 @@ class DijkstraSPT {
 		std::vector<int> dist;
 		std::vector<int> prev;
 	public:
-		DijkstraSPT(Graph &graph, const int origin);
+		DijkstraSPT(Graph &graph, const int start);
 		void print_SPT();
 };
 

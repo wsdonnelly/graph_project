@@ -3,6 +3,7 @@ CC = g++
 CFLAGS = --std=c++11 -Wall
 SRCS = sources/main.cpp sources/graph.cpp sources/kruskalMST.cpp sources/dijkstra.cpp
 OBJS = main.o graph.o kruskalMST.o dijkstra.o
+HEADERS = includes/dijkstra.hpp includes/edges.hpp includes/graph.hpp includes/kruskalMST.hpp
 INCLUDES = -I includes/
 
 all: $(NAME)
@@ -10,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJS) 
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) 
 
-$(OBJS): $(SRCS)
+$(OBJS): $(SRCS) $(HEADERS)
 	$(CC) $(CFLAGS) -c $(SRCS) $(INCLUDES)
 
 clean:

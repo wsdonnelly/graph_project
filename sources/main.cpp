@@ -14,15 +14,18 @@ int main() {
 	//Graph mygraph("example.graph");
 
 	//create 'random graph'
-	Graph mygraph(20, 0.4, 10);
+	//size-density-max edge cost
+	Graph mygraph(25, 0.2, 10);
 
 	mygraph.print_matrix();
 	std::cout << "\n";
-	//KruskalMST mst(mygraph);
-	//mst.get_MST();
-	//mst.get_cost();
-	//mst.get_edge_set();
+	KruskalMST mst(mygraph);
+	mst.get_MST();
+	mst.get_cost();
+	mst.get_edge_set();
+	std::cout << "\n";
 	DijkstraSPT spt(mygraph, 0);
 	spt.print_SPT();
 	return (0);
+
 }
