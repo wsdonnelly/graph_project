@@ -69,6 +69,7 @@ bool KruskalMST::is_connected() {
 void KruskalMST::get_cost() {
 	for (auto edge : edge_list)
 		total_cost += edge.cost;
+	std::cout << "Minimum spanning tree\n";
 	std::cout << "Total MST Cost: " << total_cost <<std::endl;
 }
 
