@@ -22,7 +22,7 @@ int main() {
 	//mst.get_MST();
 	//mst.get_cost();
 	//mst.get_edge_set();
-	DijkstraSPT spt(mygraph, 0);
+	DijkstraSPT spt(mygraph, 18);
 	spt.print_SPT();
 	return (0);
 }

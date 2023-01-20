@@ -2,8 +2,9 @@
 #include <iostream>
 #include <utility>
 #include <queue>
+#include <iomanip>
 
-DijkstraSPT::DijkstraSPT(Graph &graph, const int origin): size(graph.size), origin(origin), dist(size, INT_MAX), prev(size, -1) { //enter origin 
+DijkstraSPT::DijkstraSPT(Graph &graph, int start): size(graph.size), origin(start), dist(size, INT_MAX), prev(size, -1) { //enter origin 
 	using int_pair = std::pair<int, int>;
 	std::priority_queue <int_pair, std::vector<int_pair>, std::greater<int_pair>> p_queue;
 
@@ -14,7 +15,7 @@ DijkstraSPT::DijkstraSPT(Graph &graph, const int origin): size(graph.size), orig
 		int cur_vertex = p_queue.top().second; //vertex with shortest distance from origin
 		p_queue.pop();
 		//loop through neighbors
-		for (int v : graph.matrix[cur_vertex]) {
+		for (int v = 0; v < size; v++) {
 			if (graph.matrix[cur_vertex][v]) { //if a neighbor exists
 				int alt = dist[cur_vertex] + graph.matrix[cur_vertex][v];
 				if (alt < dist[v]) {
@@ -28,9 +29,10 @@ DijkstraSPT::DijkstraSPT(Graph &graph, const int origin): size(graph.size), orig
 }
 
 void DijkstraSPT::print_SPT() {
-	std::cout << "vertex: distance: previous:\n";
+	std::cout << "(vertex, distance, previous)\n";
 	for (int i = 0; i < size; i++) {
-		std::cout << i << " " << dist[i] << " " << prev[i] << std::endl;
+		int x = (i + origin) % size;
+		std::cout << std::setw(2) << x << " " << std::setw(2) << dist[x] << " " << std::setw(2) << prev[x] << std::endl;
 	}
 
 }
