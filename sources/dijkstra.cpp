@@ -29,6 +29,7 @@ DijkstraSPT::DijkstraSPT(Graph &graph, int start): size(graph.size), origin(star
 }
 
 void DijkstraSPT::print_SPT() {
+	std::cout << "Dijkstra Smallest Path Tree\n";
 	std::cout << "(vertex, distance, previous)\n";
 	for (int i = 0; i < size; i++) {
 		int x = (i + origin) % size;
